@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
-import { Vector3, CatmullRomCurve3, TubeGeometry } from 'three'
 import { useRailwayStore } from '@/stores/RailwayStore'
-import { RailwayNetwork, Segment } from '@/types/railway'
+import { RailwayNetwork } from '@/types/railway'
 import StationRenderer from './StationRenderer'
 import SegmentRenderer from './SegmentRenderer'
 

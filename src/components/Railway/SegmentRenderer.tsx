@@ -29,11 +29,10 @@ const SegmentRenderer: React.FC<SegmentRendererProps> = ({ segment, onClick, onH
   const [hovered, setHovered] = useState(false)
   
   // Create curve from segment points
-  const { curve, geometry } = useMemo(() => {
+  const geometry = useMemo(() => {
     const points = segment.points.map(p => new Vector3(p.x, p.y, p.z))
     const curve = new CatmullRomCurve3(points)
-    const geometry = new TubeGeometry(curve, 64, 0.1, 8, false)
-    return { curve, geometry }
+    return new TubeGeometry(curve, 64, 0.1, 8, false)
   }, [segment.points])
 
   // Animate segment glow effect

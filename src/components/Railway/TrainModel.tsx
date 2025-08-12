@@ -1,6 +1,5 @@
 import React, { useMemo, useRef, useState } from 'react'
 import { Vector3, CatmullRomCurve3 } from 'three'
-import { useFrame } from '@react-three/fiber'
 import { Box, Text } from '@react-three/drei'
 import { Train, Segment } from '@/types/railway'
 import { useRailwayStore } from '@/stores/RailwayStore'

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Canvas } from '@react-three/fiber'
 import Scene from '@/components/Scene/Scene'
 import UIOverlay from '@/components/UI/UIOverlay'

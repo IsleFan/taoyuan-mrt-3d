@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { Text, Sphere, Cylinder } from '@react-three/drei'
 import { Station } from '@/types/railway'
-import { Color } from 'three'
 
 interface StationRendererProps {
   station: Station

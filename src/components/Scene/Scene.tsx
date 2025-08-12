@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { OrbitControls, Environment, Grid, Sky } from '@react-three/drei'
+import { OrbitControls, Grid, Sky } from '@react-three/drei'
 import { useRailwayStore } from '@/stores/RailwayStore'
 import RailwayRenderer from '@/components/Railway/RailwayRenderer'
 import TrainRenderer from '@/components/Railway/TrainRenderer'
@@ -10,7 +10,7 @@ const Scene: React.FC = () => {
   const { network, simulateTrainMovement } = useRailwayStore()
 
   // Animation loop for train movement simulation
-  useFrame((state, delta) => {
+  useFrame(() => {
     if (network && network.trains.length > 0) {
       // Update train positions every frame
       simulateTrainMovement()

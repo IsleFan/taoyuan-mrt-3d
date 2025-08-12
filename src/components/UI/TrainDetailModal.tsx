@@ -9,7 +9,6 @@ import {
   Box,
   Chip,
   LinearProgress,
-  Divider,
   IconButton,
   Paper,
   Grid
@@ -96,8 +95,8 @@ const TrainDetailModal: React.FC = () => {
     >
       <DialogTitle sx={{ color: '#4fc3f7', pb: 1 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <Train sx={{ color: '#4fc3f7' }} />
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Train sx={{ color: '#4fc3f7', marginRight: 2 }} />
             <Box>
               <Typography variant="h5" sx={{ color: '#4fc3f7' }}>
                 {trainDetails.name}
