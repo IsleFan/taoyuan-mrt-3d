@@ -35,13 +35,19 @@ const TrainModel: React.FC<TrainModelProps> = ({ train, segment }) => {
 
   // Calculate train position and rotation along the curve
   const { position, rotation } = useMemo(() => {
-    const t = train.direction === 'down' ? train.position : 1 - train.position
+    const t = train.direction === 'down' ? 1 - train.position : train.position
     const position = curve.getPoint(t)
     const tangent = curve.getTangent(t).normalize()
     
-    // Calculate rotation based on direction
+    // Calculate rotation based on direction and tangent
     const rotation = new Vector3()
-    rotation.y = Math.atan2(tangent.x, tangent.z)
+    if (train.direction === 'down') {
+      // For down direction, reverse the tangent
+      rotation.y = Math.atan2(-tangent.x, -tangent.z)
+    } else {
+      // For up direction, use normal tangent
+      rotation.y = Math.atan2(tangent.x, tangent.z)
+    }
     
     // Adjust height slightly above track
     position.y += 0.3

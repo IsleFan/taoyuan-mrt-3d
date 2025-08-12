@@ -15,98 +15,98 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       id: 'A2',
       name: '三重',
       nameEn: 'Sanchong',
-      position: { x: 2, y: 0, z: -1 },
+      position: { x: 6, y: 0, z: 0 },
       type: 'station'
     },
     {
       id: 'A3',
       name: '新北產業園區',
       nameEn: 'New Taipei Industrial Park',
-      position: { x: 4, y: 0, z: -2 },
+      position: { x: 12, y: 0, z: 0 },
       type: 'station'
     },
     {
       id: 'A4',
       name: '新莊副都心',
       nameEn: 'Xinzhuang',
-      position: { x: 6, y: 0, z: -3 },
+      position: { x: 18, y: 0, z: 0 },
       type: 'interchange'
     },
     {
       id: 'A5',
       name: '泰山',
       nameEn: 'Taishan',
-      position: { x: 8, y: 0, z: -4 },
+      position: { x: 24, y: 0, z: 0 },
       type: 'station'
     },
     {
       id: 'A6',
       name: '泰山貴和',
       nameEn: 'Taishan Guihe',
-      position: { x: 10, y: 0, z: -5 },
+      position: { x: 30, y: 0, z: 0 },
       type: 'station'
     },
     {
       id: 'A7',
       name: '體育大學',
       nameEn: 'Sports University',
-      position: { x: 12, y: 0, z: -6 },
+      position: { x: 36, y: 0, z: 0 },
       type: 'station'
     },
     {
       id: 'A8',
       name: '長庚醫院',
       nameEn: 'Chang Gung Memorial Hospital',
-      position: { x: 14, y: 0, z: -7 },
+      position: { x: 42, y: 0, z: 0 },
       type: 'station'
     },
     {
       id: 'A9',
       name: '林口',
       nameEn: 'Linkou',
-      position: { x: 16, y: 0, z: -8 },
+      position: { x: 48, y: 0, z: 0 },
       type: 'station'
     },
     {
       id: 'A10',
       name: '山鼻',
       nameEn: 'Shanbi',
-      position: { x: 18, y: 0, z: -9 },
+      position: { x: 54, y: 0, z: 0 },
       type: 'station'
     },
     {
       id: 'A11',
       name: '坑口',
       nameEn: 'Kengkou',
-      position: { x: 20, y: 0, z: -10 },
+      position: { x: 60, y: 0, z: 0 },
       type: 'station'
     },
     {
       id: 'A12',
       name: '機場第一航廈',
       nameEn: 'Airport Terminal 1',
-      position: { x: 22, y: 0, z: -11 },
+      position: { x: 66, y: 0, z: 0 },
       type: 'terminal'
     },
     {
       id: 'A13',
       name: '機場第二航廈',
       nameEn: 'Airport Terminal 2',
-      position: { x: 24, y: 0, z: -12 },
+      position: { x: 72, y: 0, z: 0 },
       type: 'terminal'
     }
   ],
   segments: [
-    // Upward segments (A1 to A13)
+    // Upward segments (A1 to A13) - offset to positive Z
     {
       id: 'A1-A2-up',
       startStationId: 'A1',
       endStationId: 'A2',
       direction: 'up',
       points: [
-        { x: 0, y: 0, z: 0 },
-        { x: 1, y: 0, z: -0.5 },
-        { x: 2, y: 0, z: -1 }
+        { x: 0, y: 0, z: 1.5 },
+        { x: 3, y: 0, z: 1.5 },
+        { x: 6, y: 0, z: 1.5 }
       ],
       color: '#4fc3f7',
       status: 'normal'
@@ -117,9 +117,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A3',
       direction: 'up',
       points: [
-        { x: 2, y: 0, z: -1 },
-        { x: 3, y: 0, z: -1.5 },
-        { x: 4, y: 0, z: -2 }
+        { x: 6, y: 0, z: 1.5 },
+        { x: 9, y: 0, z: 1.5 },
+        { x: 12, y: 0, z: 1.5 }
       ],
       color: '#4fc3f7',
       status: 'normal'
@@ -130,9 +130,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A4',
       direction: 'up',
       points: [
-        { x: 4, y: 0, z: -2 },
-        { x: 5, y: 0, z: -2.5 },
-        { x: 6, y: 0, z: -3 }
+        { x: 12, y: 0, z: 1.5 },
+        { x: 15, y: 0, z: 1.5 },
+        { x: 18, y: 0, z: 1.5 }
       ],
       color: '#4fc3f7',
       status: 'normal'
@@ -143,9 +143,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A5',
       direction: 'up',
       points: [
-        { x: 6, y: 0, z: -3 },
-        { x: 7, y: 0, z: -3.5 },
-        { x: 8, y: 0, z: -4 }
+        { x: 18, y: 0, z: 1.5 },
+        { x: 21, y: 0, z: 1.5 },
+        { x: 24, y: 0, z: 1.5 }
       ],
       color: '#4fc3f7',
       status: 'normal'
@@ -156,9 +156,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A6',
       direction: 'up',
       points: [
-        { x: 8, y: 0, z: -4 },
-        { x: 9, y: 0, z: -4.5 },
-        { x: 10, y: 0, z: -5 }
+        { x: 24, y: 0, z: 1.5 },
+        { x: 27, y: 0, z: 1.5 },
+        { x: 30, y: 0, z: 1.5 }
       ],
       color: '#4fc3f7',
       status: 'normal'
@@ -169,9 +169,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A7',
       direction: 'up',
       points: [
-        { x: 10, y: 0, z: -5 },
-        { x: 11, y: 0, z: -5.5 },
-        { x: 12, y: 0, z: -6 }
+        { x: 30, y: 0, z: 1.5 },
+        { x: 33, y: 0, z: 1.5 },
+        { x: 36, y: 0, z: 1.5 }
       ],
       color: '#4fc3f7',
       status: 'normal'
@@ -182,9 +182,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A8',
       direction: 'up',
       points: [
-        { x: 12, y: 0, z: -6 },
-        { x: 13, y: 0, z: -6.5 },
-        { x: 14, y: 0, z: -7 }
+        { x: 36, y: 0, z: 1.5 },
+        { x: 39, y: 0, z: 1.5 },
+        { x: 42, y: 0, z: 1.5 }
       ],
       color: '#4fc3f7',
       status: 'normal'
@@ -195,9 +195,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A9',
       direction: 'up',
       points: [
-        { x: 14, y: 0, z: -7 },
-        { x: 15, y: 0, z: -7.5 },
-        { x: 16, y: 0, z: -8 }
+        { x: 42, y: 0, z: 1.5 },
+        { x: 45, y: 0, z: 1.5 },
+        { x: 48, y: 0, z: 1.5 }
       ],
       color: '#4fc3f7',
       status: 'normal'
@@ -208,9 +208,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A10',
       direction: 'up',
       points: [
-        { x: 16, y: 0, z: -8 },
-        { x: 17, y: 0, z: -8.5 },
-        { x: 18, y: 0, z: -9 }
+        { x: 48, y: 0, z: 1.5 },
+        { x: 51, y: 0, z: 1.5 },
+        { x: 54, y: 0, z: 1.5 }
       ],
       color: '#4fc3f7',
       status: 'normal'
@@ -221,9 +221,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A11',
       direction: 'up',
       points: [
-        { x: 18, y: 0, z: -9 },
-        { x: 19, y: 0, z: -9.5 },
-        { x: 20, y: 0, z: -10 }
+        { x: 54, y: 0, z: 1.5 },
+        { x: 57, y: 0, z: 1.5 },
+        { x: 60, y: 0, z: 1.5 }
       ],
       color: '#4fc3f7',
       status: 'normal'
@@ -234,9 +234,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A12',
       direction: 'up',
       points: [
-        { x: 20, y: 0, z: -10 },
-        { x: 21, y: 0, z: -10.5 },
-        { x: 22, y: 0, z: -11 }
+        { x: 60, y: 0, z: 1.5 },
+        { x: 63, y: 0, z: 1.5 },
+        { x: 66, y: 0, z: 1.5 }
       ],
       color: '#4fc3f7',
       status: 'normal'
@@ -247,23 +247,23 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A13',
       direction: 'up',
       points: [
-        { x: 22, y: 0, z: -11 },
-        { x: 23, y: 0, z: -11.5 },
-        { x: 24, y: 0, z: -12 }
+        { x: 66, y: 0, z: 1.5 },
+        { x: 69, y: 0, z: 1.5 },
+        { x: 72, y: 0, z: 1.5 }
       ],
       color: '#4fc3f7',
       status: 'normal'
     },
-    // Downward segments (A13 to A1) - offset slightly for visibility
+    // Downward segments (A13 to A1) - offset to negative Z
     {
       id: 'A13-A12-down',
       startStationId: 'A13',
       endStationId: 'A12',
       direction: 'down',
       points: [
-        { x: 24, y: 0, z: -11.8 },
-        { x: 23, y: 0, z: -11.3 },
-        { x: 22, y: 0, z: -10.8 }
+        { x: 72, y: 0, z: -1.5 },
+        { x: 69, y: 0, z: -1.5 },
+        { x: 66, y: 0, z: -1.5 }
       ],
       color: '#ff4081',
       status: 'normal'
@@ -274,9 +274,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A11',
       direction: 'down',
       points: [
-        { x: 22, y: 0, z: -10.8 },
-        { x: 21, y: 0, z: -10.3 },
-        { x: 20, y: 0, z: -9.8 }
+        { x: 66, y: 0, z: -1.5 },
+        { x: 63, y: 0, z: -1.5 },
+        { x: 60, y: 0, z: -1.5 }
       ],
       color: '#ff4081',
       status: 'normal'
@@ -287,9 +287,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A10',
       direction: 'down',
       points: [
-        { x: 20, y: 0, z: -9.8 },
-        { x: 19, y: 0, z: -9.3 },
-        { x: 18, y: 0, z: -8.8 }
+        { x: 60, y: 0, z: -1.5 },
+        { x: 57, y: 0, z: -1.5 },
+        { x: 54, y: 0, z: -1.5 }
       ],
       color: '#ff4081',
       status: 'normal'
@@ -300,9 +300,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A9',
       direction: 'down',
       points: [
-        { x: 18, y: 0, z: -8.8 },
-        { x: 17, y: 0, z: -8.3 },
-        { x: 16, y: 0, z: -7.8 }
+        { x: 54, y: 0, z: -1.5 },
+        { x: 51, y: 0, z: -1.5 },
+        { x: 48, y: 0, z: -1.5 }
       ],
       color: '#ff4081',
       status: 'normal'
@@ -313,9 +313,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A8',
       direction: 'down',
       points: [
-        { x: 16, y: 0, z: -7.8 },
-        { x: 15, y: 0, z: -7.3 },
-        { x: 14, y: 0, z: -6.8 }
+        { x: 48, y: 0, z: -1.5 },
+        { x: 45, y: 0, z: -1.5 },
+        { x: 42, y: 0, z: -1.5 }
       ],
       color: '#ff4081',
       status: 'normal'
@@ -326,9 +326,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A7',
       direction: 'down',
       points: [
-        { x: 14, y: 0, z: -6.8 },
-        { x: 13, y: 0, z: -6.3 },
-        { x: 12, y: 0, z: -5.8 }
+        { x: 42, y: 0, z: -1.5 },
+        { x: 39, y: 0, z: -1.5 },
+        { x: 36, y: 0, z: -1.5 }
       ],
       color: '#ff4081',
       status: 'normal'
@@ -339,9 +339,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A6',
       direction: 'down',
       points: [
-        { x: 12, y: 0, z: -5.8 },
-        { x: 11, y: 0, z: -5.3 },
-        { x: 10, y: 0, z: -4.8 }
+        { x: 36, y: 0, z: -1.5 },
+        { x: 33, y: 0, z: -1.5 },
+        { x: 30, y: 0, z: -1.5 }
       ],
       color: '#ff4081',
       status: 'normal'
@@ -352,9 +352,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A5',
       direction: 'down',
       points: [
-        { x: 10, y: 0, z: -4.8 },
-        { x: 9, y: 0, z: -4.3 },
-        { x: 8, y: 0, z: -3.8 }
+        { x: 30, y: 0, z: -1.5 },
+        { x: 27, y: 0, z: -1.5 },
+        { x: 24, y: 0, z: -1.5 }
       ],
       color: '#ff4081',
       status: 'normal'
@@ -365,9 +365,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A4',
       direction: 'down',
       points: [
-        { x: 8, y: 0, z: -3.8 },
-        { x: 7, y: 0, z: -3.3 },
-        { x: 6, y: 0, z: -2.8 }
+        { x: 24, y: 0, z: -1.5 },
+        { x: 21, y: 0, z: -1.5 },
+        { x: 18, y: 0, z: -1.5 }
       ],
       color: '#ff4081',
       status: 'normal'
@@ -378,9 +378,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A3',
       direction: 'down',
       points: [
-        { x: 6, y: 0, z: -2.8 },
-        { x: 5, y: 0, z: -2.3 },
-        { x: 4, y: 0, z: -1.8 }
+        { x: 18, y: 0, z: -1.5 },
+        { x: 15, y: 0, z: -1.5 },
+        { x: 12, y: 0, z: -1.5 }
       ],
       color: '#ff4081',
       status: 'normal'
@@ -391,9 +391,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A2',
       direction: 'down',
       points: [
-        { x: 4, y: 0, z: -1.8 },
-        { x: 3, y: 0, z: -1.3 },
-        { x: 2, y: 0, z: -0.8 }
+        { x: 12, y: 0, z: -1.5 },
+        { x: 9, y: 0, z: -1.5 },
+        { x: 6, y: 0, z: -1.5 }
       ],
       color: '#ff4081',
       status: 'normal'
@@ -404,9 +404,9 @@ export const taoyuanAirportLineNetwork: RailwayNetwork = {
       endStationId: 'A1',
       direction: 'down',
       points: [
-        { x: 2, y: 0, z: -0.8 },
-        { x: 1, y: 0, z: -0.3 },
-        { x: 0, y: 0, z: 0.2 }
+        { x: 6, y: 0, z: -1.5 },
+        { x: 3, y: 0, z: -1.5 },
+        { x: 0, y: 0, z: -1.5 }
       ],
       color: '#ff4081',
       status: 'normal'

@@ -30,7 +30,7 @@ function App() {
         <NetworkInitializer />
         <div style={{ width: '100vw', height: '100vh', position: 'relative' }}>
           <Canvas
-            camera={{ position: [0, 10, 20], fov: 45 }}
+            camera={{ position: [36, 25, 30], fov: 50 }}
             style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)' }}
           >
             <Scene />

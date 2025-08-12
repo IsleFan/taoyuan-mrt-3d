@@ -20,7 +20,7 @@ const Scene: React.FC = () => {
   // Initialize controls
   useEffect(() => {
     if (controlsRef.current) {
-      controlsRef.current.target.set(0, 0, 0)
+      controlsRef.current.target.set(36, 0, 0)
       controlsRef.current.update()
     }
   }, [])
