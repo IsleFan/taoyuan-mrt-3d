@@ -42,11 +42,11 @@ const TrainModel: React.FC<TrainModelProps> = ({ train, segment }) => {
     // Calculate rotation based on direction and tangent
     const rotation = new Vector3()
     if (train.direction === 'down') {
-      // For down direction, reverse the tangent
-      rotation.y = Math.atan2(-tangent.x, -tangent.z)
+      // For down direction, reverse the tangent and add 90 degrees
+      rotation.y = Math.atan2(-tangent.x, -tangent.z) + Math.PI / 2
     } else {
-      // For up direction, use normal tangent
-      rotation.y = Math.atan2(tangent.x, tangent.z)
+      // For up direction, use normal tangent and add 90 degrees
+      rotation.y = Math.atan2(tangent.x, tangent.z) + Math.PI / 2
     }
     
     // Adjust height slightly above track
