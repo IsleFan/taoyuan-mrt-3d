@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography, Paper, Chip, LinearProgress } from '@mui/material'
+import { Typography, Paper, Chip, LinearProgress } from '@mui/material'
 import { RailwayNetwork } from '@/types/railway'
 
 interface NetworkStatusProps {
@@ -12,11 +12,11 @@ const NetworkStatus: React.FC<NetworkStatusProps> = ({ network }) => {
   const runningTrains = network.trains.filter(t => t.status === 'running').length
   const totalSegments = network.segments.length
   const normalSegments = network.segments.filter(s => s.status === 'normal').length
-  
+
   const operationalRate = totalSegments > 0 ? (normalSegments / totalSegments) * 100 : 0
   const trainServiceRate = totalTrains > 0 ? (runningTrains / totalTrains) * 100 : 0
 
-  const getStatusChipColor = (count: number, total: number) => {
+  const getStatusChipColor = (count: number, total: number): 'success' | 'warning' | 'error' => {
     const rate = count / total
     if (rate >= 0.9) return 'success'
     if (rate >= 0.7) return 'warning'
@@ -24,8 +24,8 @@ const NetworkStatus: React.FC<NetworkStatusProps> = ({ network }) => {
   }
 
   return (
-    <Box
-      sx={{
+    <div
+      style={{
         position: 'absolute',
         top: 20,
         right: 20,
@@ -48,17 +48,17 @@ const NetworkStatus: React.FC<NetworkStatusProps> = ({ network }) => {
         </Typography>
 
         {/* Train Status */}
-        <Box sx={{ mb: 2 }}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
+        <div style={{ marginBottom: '16px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
             <Typography variant="body2" sx={{ color: '#fff' }}>
               列車營運狀態
             </Typography>
-            <Chip 
+            <Chip
               label={`${runningTrains}/${totalTrains}`}
               size="small"
               color={getStatusChipColor(runningTrains, totalTrains)}
             />
-          </Box>
+          </div>
           <LinearProgress
             variant="determinate"
             value={trainServiceRate}
@@ -74,20 +74,20 @@ const NetworkStatus: React.FC<NetworkStatusProps> = ({ network }) => {
           <Typography variant="caption" sx={{ color: '#ccc' }}>
             {trainServiceRate.toFixed(1)}% 服務中
           </Typography>
-        </Box>
+        </div>
 
         {/* Segment Status */}
-        <Box sx={{ mb: 2 }}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
+        <div style={{ marginBottom: '16px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
             <Typography variant="body2" sx={{ color: '#fff' }}>
               路段營運狀態
             </Typography>
-            <Chip 
+            <Chip
               label={`${normalSegments}/${totalSegments}`}
               size="small"
               color={getStatusChipColor(normalSegments, totalSegments)}
             />
-          </Box>
+          </div>
           <LinearProgress
             variant="determinate"
             value={operationalRate}
@@ -103,41 +103,41 @@ const NetworkStatus: React.FC<NetworkStatusProps> = ({ network }) => {
           <Typography variant="caption" sx={{ color: '#ccc' }}>
             {operationalRate.toFixed(1)}% 正常營運
           </Typography>
-        </Box>
+        </div>
 
         {/* Real-time Updates */}
-        <Box>
+        <div>
           <Typography variant="body2" sx={{ color: '#4fc3f7', mb: 1 }}>
             即時資訊
           </Typography>
-          
+
           {network.trains.filter(t => t.delay > 0).length > 0 && (
             <Typography variant="caption" sx={{ color: '#ffeb3b', display: 'block' }}>
-              ⚠️ {network.trains.filter(t => t.delay > 0).length} 班列車延誤
+              {network.trains.filter(t => t.delay > 0).length} 班列車延誤
             </Typography>
           )}
-          
+
           {network.segments.filter(s => s.status === 'maintenance').length > 0 && (
             <Typography variant="caption" sx={{ color: '#ff9800', display: 'block' }}>
-              🔧 {network.segments.filter(s => s.status === 'maintenance').length} 路段維護中
+              {network.segments.filter(s => s.status === 'maintenance').length} 路段維護中
             </Typography>
           )}
-          
+
           {network.segments.filter(s => s.status === 'closed').length > 0 && (
             <Typography variant="caption" sx={{ color: '#f44336', display: 'block' }}>
-              ❌ {network.segments.filter(s => s.status === 'closed').length} 路段暫停服務
+              {network.segments.filter(s => s.status === 'closed').length} 路段暫停服務
             </Typography>
           )}
-          
-          {network.trains.filter(t => t.delay > 0).length === 0 && 
+
+          {network.trains.filter(t => t.delay > 0).length === 0 &&
            network.segments.filter(s => s.status !== 'normal').length === 0 && (
             <Typography variant="caption" sx={{ color: '#4caf50', display: 'block' }}>
-              ✅ 路網運作正常
+              路網運作正常
             </Typography>
           )}
-        </Box>
+        </div>
       </Paper>
-    </Box>
+    </div>
   )
 }
 

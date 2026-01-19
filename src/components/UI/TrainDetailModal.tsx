@@ -6,7 +6,6 @@ import {
   DialogActions,
   Button,
   Typography,
-  Box,
   Chip,
   LinearProgress,
   IconButton,
@@ -94,29 +93,29 @@ const TrainDetailModal: React.FC = () => {
       }}
     >
       <DialogTitle sx={{ color: '#4fc3f7', pb: 1 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
             <Train sx={{ color: '#4fc3f7', marginRight: 2 }} />
-            <Box>
+            <div>
               <Typography variant="h5" sx={{ color: '#4fc3f7' }}>
                 {trainDetails.name}
               </Typography>
               <Typography variant="subtitle2" sx={{ color: '#ccc' }}>
                 列車詳細資訊
               </Typography>
-            </Box>
-          </Box>
+            </div>
+          </div>
           <IconButton onClick={closeTrainDetail} sx={{ color: '#ccc' }}>
             <Close />
           </IconButton>
-        </Box>
+        </div>
       </DialogTitle>
 
       <DialogContent>
         <Grid container spacing={3}>
           {/* Status and Type */}
           <Grid item xs={12}>
-            <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
+            <div style={{ display: 'flex', gap: '16px', marginBottom: '16px' }}>
               <Chip
                 label={getTypeText(trainDetails.type)}
                 size="medium"
@@ -144,7 +143,7 @@ const TrainDetailModal: React.FC = () => {
                   }}
                 />
               )}
-            </Box>
+            </div>
           </Grid>
 
           {/* Current Status */}
@@ -160,29 +159,29 @@ const TrainDetailModal: React.FC = () => {
                 當前狀態
               </Typography>
 
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
                 <Speed sx={{ color: '#fff', mr: 1 }} />
                 <Typography variant="body1" sx={{ color: '#fff' }}>
                   速度: <span style={{ color: '#4fc3f7' }}>{trainDetails.speed} km/h</span>
                 </Typography>
-              </Box>
+              </div>
 
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
                 <LocationOn sx={{ color: '#fff', mr: 1 }} />
                 <Typography variant="body1" sx={{ color: '#fff' }}>
                   下一站: <span style={{ color: '#4fc3f7' }}>{trainDetails.nextStation}</span>
                 </Typography>
-              </Box>
+              </div>
 
               {trainDetails.estimatedArrival && (
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
                   <Schedule sx={{ color: '#fff', mr: 1 }} />
                   <Typography variant="body1" sx={{ color: '#fff' }}>
                     預計抵達: <span style={{ color: '#4fc3f7' }}>
                       {trainDetails.estimatedArrival.toLocaleTimeString()}
                     </span>
                   </Typography>
-                </Box>
+                </div>
               )}
             </Paper>
           </Grid>
@@ -200,14 +199,14 @@ const TrainDetailModal: React.FC = () => {
                 乘客資訊
               </Typography>
 
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
                 <People sx={{ color: '#fff', mr: 1 }} />
                 <Typography variant="body1" sx={{ color: '#fff' }}>
                   載客率: <span style={{ color: occupancyLevel.color }}>
                     {occupancyRate.toFixed(1)}% ({occupancyLevel.text})
                   </span>
                 </Typography>
-              </Box>
+              </div>
 
               <LinearProgress
                 variant="determinate"
@@ -247,7 +246,7 @@ const TrainDetailModal: React.FC = () => {
                 <Typography variant="h6" sx={{ color: '#4fc3f7', mb: 2 }}>
                   行駛路線
                 </Typography>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                   {trainDetails.route.map((station, index) => (
                     <React.Fragment key={station}>
                       <Chip
@@ -265,7 +264,7 @@ const TrainDetailModal: React.FC = () => {
                       )}
                     </React.Fragment>
                   ))}
-                </Box>
+                </div>
               </Paper>
             </Grid>
           )}

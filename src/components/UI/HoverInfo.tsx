@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Box, Typography, Paper, Chip } from '@mui/material'
+import { Typography, Paper, Chip } from '@mui/material'
 import { Train } from '@/types/railway'
 
 interface HoverInfoProps {
@@ -58,8 +58,8 @@ const HoverInfo: React.FC<HoverInfoProps> = ({ train }) => {
   const occupancyRate = (train.occupancy / train.capacity) * 100
 
   return (
-    <Box
-      sx={{
+    <div
+      style={{
         position: 'fixed',
         left: mousePos.x + 15,
         top: mousePos.y - 100,
@@ -83,72 +83,72 @@ const HoverInfo: React.FC<HoverInfoProps> = ({ train }) => {
           {train.name}
         </Typography>
 
-        <Box sx={{ display: 'flex', gap: 1, mb: 1 }}>
-          <Chip 
+        <div style={{ display: 'flex', gap: '8px', marginBottom: '8px' }}>
+          <Chip
             label={getTypeText(train.type)}
             size="small"
-            sx={{ 
+            sx={{
               backgroundColor: train.type === 'express' ? '#e91e63' : '#3f51b5',
               color: '#fff'
             }}
           />
-          <Chip 
+          <Chip
             label={getStatusText(train.status)}
             size="small"
-            sx={{ 
+            sx={{
               backgroundColor: getStatusColor(train.status),
               color: '#fff'
             }}
           />
-        </Box>
+        </div>
 
-        <Box sx={{ mb: 1 }}>
+        <div style={{ marginBottom: '8px' }}>
           <Typography variant="body2" sx={{ color: '#fff' }}>
             速度: <span style={{ color: '#4fc3f7' }}>{train.speed} km/h</span>
           </Typography>
           <Typography variant="body2" sx={{ color: '#fff' }}>
             下一站: <span style={{ color: '#4fc3f7' }}>{train.nextStation}</span>
           </Typography>
-          
+
           {train.delay > 0 && (
             <Typography variant="body2" sx={{ color: '#ffeb3b' }}>
               延誤: {train.delay} 分鐘
             </Typography>
           )}
-        </Box>
+        </div>
 
-        <Box>
+        <div>
           <Typography variant="body2" sx={{ color: '#fff', mb: 0.5 }}>
             載客率: {occupancyRate.toFixed(1)}%
           </Typography>
-          <Box 
-            sx={{ 
-              height: 6, 
-              backgroundColor: 'rgba(255,255,255,0.2)', 
+          <div
+            style={{
+              height: 6,
+              backgroundColor: 'rgba(255,255,255,0.2)',
               borderRadius: 3,
               overflow: 'hidden'
             }}
           >
-            <Box 
-              sx={{ 
-                height: '100%', 
+            <div
+              style={{
+                height: '100%',
                 width: `${occupancyRate}%`,
-                backgroundColor: occupancyRate > 80 ? '#f44336' : 
+                backgroundColor: occupancyRate > 80 ? '#f44336' :
                                 occupancyRate > 60 ? '#ff9800' : '#4caf50',
                 transition: 'width 0.3s ease'
               }}
             />
-          </Box>
+          </div>
           <Typography variant="caption" sx={{ color: '#ccc' }}>
             {train.occupancy}/{train.capacity} 人
           </Typography>
-        </Box>
+        </div>
 
         <Typography variant="caption" sx={{ color: '#999', display: 'block', mt: 1 }}>
           點擊查看詳細資訊
         </Typography>
       </Paper>
-    </Box>
+    </div>
   )
 }
 

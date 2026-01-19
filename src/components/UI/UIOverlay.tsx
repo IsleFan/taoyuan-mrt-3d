@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography, Paper, Chip } from '@mui/material'
+import { Typography, Paper, Chip } from '@mui/material'
 import { useRailwayStore } from '@/stores/RailwayStore'
 import TrainDetailModal from './TrainDetailModal'
 import NetworkStatus from './NetworkStatus'
@@ -11,8 +11,8 @@ const UIOverlay: React.FC = () => {
   return (
     <>
       {/* Header */}
-      <Box
-        sx={{
+      <div
+        style={{
           position: 'absolute',
           top: 20,
           left: 20,
@@ -36,7 +36,7 @@ const UIOverlay: React.FC = () => {
             Taoyuan Airport MRT 3D Network
           </Typography>
         </Paper>
-      </Box>
+      </div>
 
       {/* Network Status Panel */}
       {network && <NetworkStatus network={network} />}
@@ -45,8 +45,8 @@ const UIOverlay: React.FC = () => {
       {hoveredTrain && <HoverInfo train={hoveredTrain} />}
 
       {/* Control Instructions */}
-      <Box
-        sx={{
+      <div
+        style={{
           position: 'absolute',
           bottom: 20,
           left: 20,
@@ -68,23 +68,23 @@ const UIOverlay: React.FC = () => {
             控制說明
           </Typography>
           <Typography variant="body2" sx={{ color: '#cccccc', mb: 0.5 }}>
-            • 滑鼠拖拽：旋轉視角
+            滑鼠拖拽：旋轉視角
           </Typography>
           <Typography variant="body2" sx={{ color: '#cccccc', mb: 0.5 }}>
-            • 滑鼠滾輪：縮放
+            滑鼠滾輪：縮放
           </Typography>
           <Typography variant="body2" sx={{ color: '#cccccc', mb: 0.5 }}>
-            • 點擊列車：查看詳細資訊
+            點擊列車：查看詳細資訊
           </Typography>
           <Typography variant="body2" sx={{ color: '#cccccc' }}>
-            • 點擊路段：切換狀態
+            點擊路段：切換狀態
           </Typography>
         </Paper>
-      </Box>
+      </div>
 
       {/* Legend */}
-      <Box
-        sx={{
+      <div
+        style={{
           position: 'absolute',
           bottom: 20,
           right: 20,
@@ -105,31 +105,31 @@ const UIOverlay: React.FC = () => {
           <Typography variant="h6" sx={{ color: '#4fc3f7', mb: 1 }}>
             圖例
           </Typography>
-          
-          <Box sx={{ mb: 1 }}>
+
+          <div style={{ marginBottom: '8px' }}>
             <Typography variant="subtitle2" sx={{ color: '#fff', mb: 0.5 }}>
               路段狀態:
             </Typography>
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
               <Chip label="正常" size="small" sx={{ backgroundColor: '#4fc3f7', color: '#fff' }} />
               <Chip label="維護" size="small" sx={{ backgroundColor: '#ff9800', color: '#fff' }} />
               <Chip label="延誤" size="small" sx={{ backgroundColor: '#ffeb3b', color: '#000' }} />
               <Chip label="關閉" size="small" sx={{ backgroundColor: '#f44336', color: '#fff' }} />
-            </Box>
-          </Box>
+            </div>
+          </div>
 
-          <Box>
+          <div>
             <Typography variant="subtitle2" sx={{ color: '#fff', mb: 0.5 }}>
               車站類型:
             </Typography>
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
               <Chip label="一般" size="small" sx={{ backgroundColor: '#2196f3', color: '#fff' }} />
               <Chip label="轉乘" size="small" sx={{ backgroundColor: '#4caf50', color: '#fff' }} />
               <Chip label="終點" size="small" sx={{ backgroundColor: '#f44336', color: '#fff' }} />
-            </Box>
-          </Box>
+            </div>
+          </div>
         </Paper>
-      </Box>
+      </div>
 
       {/* Train Detail Modal */}
       {isTrainDetailOpen && <TrainDetailModal />}
