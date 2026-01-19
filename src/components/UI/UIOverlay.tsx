@@ -4,6 +4,7 @@ import { useRailwayStore } from '@/stores/RailwayStore'
 import TrainDetailModal from './TrainDetailModal'
 import NetworkStatus from './NetworkStatus'
 import HoverInfo from './HoverInfo'
+import VisualSettingsPanel from './VisualSettingsPanel'
 
 const UIOverlay: React.FC = () => {
   const { network, hoveredTrain, isTrainDetailOpen } = useRailwayStore()
@@ -40,6 +41,9 @@ const UIOverlay: React.FC = () => {
 
       {/* Network Status Panel */}
       {network && <NetworkStatus network={network} />}
+
+      {/* Visual Settings Panel */}
+      <VisualSettingsPanel />
 
       {/* Hover Information */}
       {hoveredTrain && <HoverInfo train={hoveredTrain} />}
