@@ -41,13 +41,13 @@ interface EnvironmentState {
 }
 
 export const useEnvironmentStore = create<EnvironmentState>((set) => ({
-  // Initial state
-  timeOfDay: 10, // 10 AM
+  // Initial state - Start with night mode for dramatic effect
+  timeOfDay: 21, // 9 PM - Night mode
   autoProgressTime: false,
   timeSpeed: 0.5,
 
   enableBloom: true,
-  bloomIntensity: 0.5,
+  bloomIntensity: 1.0, // Higher for more visible effect
   enableVignette: true,
   enableChromaticAberration: false,
 

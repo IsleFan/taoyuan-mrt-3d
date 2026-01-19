@@ -25,7 +25,7 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess'
 import { useEnvironmentStore } from '@/stores/EnvironmentStore'
 
 const VisualSettingsPanel: React.FC = () => {
-  const [expanded, setExpanded] = React.useState(false)
+  const [expanded, setExpanded] = React.useState(true) // Expanded by default
 
   const {
     timeOfDay,
